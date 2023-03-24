@@ -1,4 +1,4 @@
-import fs from "fs";
+import * as fs from "fs";
 import { readFile, writeFile } from "../utils/fileHandling";
 import Note from "./Note";
 
