@@ -1,8 +1,10 @@
 import * as yargs from "yargs";
 import Note from "./models/Note";
 import Store from "./models/Store";
+import CLI from "./models/CLI";
 
 const store = new Store("./storage");
+const cli = new CLI(30);
 
 yargs.command({
   command: ["create", "cr"],
@@ -37,7 +39,7 @@ yargs.command({
   },
   handler: (argv) => {
     const note = store.getNote(argv.title);
-    console.log(note.data);
+    cli.showNote(note);
   },
 });
 
