@@ -16,8 +16,8 @@ class Note {
     return this._title;
   }
 
-  public isExact(title: string): boolean {
-    return title === this._title;
+  public isExact(note: Note): boolean {
+    return note.title === this.title;
   }
 }
 

@@ -10,8 +10,8 @@ const DELIM = "__";
 class Store {
   private _dir: string;
   private _notes: Array<Note>;
-  private makeNoteFileName(title: string): string {
-    return `${DELIM}${title}${DELIM}.txt`;
+  private makeNoteFileName(note: Note): string {
+    return `${DELIM}${note.title}${DELIM}.txt`;
   }
   private isNoteFileName(filename: string): boolean {
     const parts = filename.split(DELIM);
@@ -42,6 +42,10 @@ class Store {
   }
 
   public saveNote(note: Note) {
-    // note.
+    if (this._notes.filter((storeNote) => storeNote.isExact(note)).length > 0)
+      throw new Error("Note already existed!");
+
+    this._notes.push(note);
+    writeFile(`${this._dir}/${this.makeNoteFileName(note)}`, note.data);
   }
 }
