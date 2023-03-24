@@ -20,7 +20,8 @@ const splitWordsByCount = (str: string, lineCount: number) => {
       charCount += word.length + 1;
     }
   });
+  if (tempStr.length) splittedList.push(tempStr);
   return splittedList;
-}; 
+};
 
 export { cloneString, splitWordsByCount };
