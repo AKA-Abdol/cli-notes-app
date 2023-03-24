@@ -52,4 +52,26 @@ yargs.command({
   },
 });
 
+yargs.command({
+  command: ["search", "sch"],
+  describe: "Search note titles",
+  builder: {
+    titleKey: {
+      type: "string",
+      describe: "Search key for title",
+      alias: "title",
+      default: "",
+    },
+    bodyKey: {
+      type: "string",
+      describe: "Search key for body",
+      alias: "body",
+      default: "",
+    },
+  },
+  handler: (argv) => {
+    const searchedNotes = store.getNoteFilteredBy(argv.title, argv.body);
+  },
+});
+
 yargs.parse();

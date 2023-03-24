@@ -51,6 +51,16 @@ class Store {
     return this._notes;
   }
 
+  public getNoteFilteredBy(titleKey: string, bodyKey: string) {
+    const filteredNotes = this._notes.filter((note) => {
+      let res = true;
+      if (titleKey !== "") res = res && note.title.includes(titleKey);
+      if (bodyKey !== "") res = res && note.data.includes(bodyKey);
+      return res;
+    });
+    return filteredNotes;
+  }
+
   public saveNote(note: Note) {
     if (this._notes.filter((storeNote) => storeNote.isExact(note)).length > 0)
       throw new Error("Note already existed!");
