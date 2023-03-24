@@ -47,6 +47,10 @@ class Store {
     return foundNoteList[0];
   }
 
+  public getAllNotes() {
+    return this._notes;
+  }
+
   public saveNote(note: Note) {
     if (this._notes.filter((storeNote) => storeNote.isExact(note)).length > 0)
       throw new Error("Note already existed!");

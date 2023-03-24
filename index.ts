@@ -43,4 +43,13 @@ yargs.command({
   },
 });
 
+yargs.command({
+  command: ["list", "ls"],
+  describe: "List all Notes",
+  handler: (argv) => {
+    const allNotes = store.getAllNotes();
+    allNotes.forEach((note) => cli.showNote(note));
+  },
+});
+
 yargs.parse();
