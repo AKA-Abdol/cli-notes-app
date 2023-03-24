@@ -49,3 +49,5 @@ class Store {
     writeFile(`${this._dir}/${this.makeNoteFileName(note)}`, note.data);
   }
 }
+
+export default Store;
