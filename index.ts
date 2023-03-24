@@ -71,6 +71,7 @@ yargs.command({
   },
   handler: (argv) => {
     const searchedNotes = store.getNoteFilteredBy(argv.title, argv.body);
+    searchedNotes.forEach((note) => cli.showNote(note));
   },
 });
 
