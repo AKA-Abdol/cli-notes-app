@@ -1,0 +1,18 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "note app using cli and inline commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amirhossein Abdoli",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.15.7",
+    "@types/yargs": "^17.0.23",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
+    "yargs": "^17.7.1"
+  }
+}
