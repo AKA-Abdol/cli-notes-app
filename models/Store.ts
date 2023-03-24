@@ -41,6 +41,12 @@ class Store {
       );
   }
 
+  public getNote(title: string) {
+    const foundNoteList = this._notes.filter((note) => note.title === title);
+    if (foundNoteList.length !== 1) throw new Error("There is No Such a Note!");
+    return foundNoteList[0];
+  }
+
   public saveNote(note: Note) {
     if (this._notes.filter((storeNote) => storeNote.isExact(note)).length > 0)
       throw new Error("Note already existed!");
