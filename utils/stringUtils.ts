@@ -21,6 +21,6 @@ const splitWordsByCount = (str: string, lineCount: number) => {
     }
   });
   return splittedList;
-};
+}; 
 
 export { cloneString, splitWordsByCount };
