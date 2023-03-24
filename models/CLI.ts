@@ -34,10 +34,19 @@ class CLI {
   }
 
   private showBody(body: string) {
-    // const lineSplittedWords = splitWordsByCount()
+    const lineSplittedWords = splitWordsByCount(body, this._maxLineCharCount);
+    lineSplittedWords.forEach((line) => this.log(line));
+  }
+
+  private showFooter() {
+    this.log(cloneString(this._dividerChar, this._maxLineCharCount));
   }
 
   public showNote(note: Note) {
-
+    this.showTitle(note.title);
+    this.showBody(note.data);
+    this.showFooter();
   }
 }
+
+export default CLI;

@@ -1,14 +1,13 @@
 const cloneString = (pattern: string, count: number) => {
   let clonedPattern: string = "";
   for (let i = 0; i < count; i++) clonedPattern += pattern;
-  return pattern;
+  return clonedPattern;
 };
 
 const splitWordsByCount = (str: string, lineCount: number) => {
   const splittedList: Array<string> = [];
   const words = str.split(" ");
-  console.log(words);
-  
+
   let tempStr = "";
   let charCount = 0;
   words.forEach((word) => {
